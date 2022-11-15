@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<script type="text/javascript">
+		function validate(){
+		var firstName=document.getElementById("firstname").value;
+		var phoneNumber=document.getElementById("phonenumber").value;
+		var emailId=document.getElementById("email").value;
+		var emailIdCheck=/^[a-zA-Z0-9#.]+@[a-z]+\.[a-z]{2,3}$/
+		var firstNameCheck=/^[a-zA-Z ]+$/
+		var phoneNumberCheck=/^[0-9]+$/
+		if(firstName==""||firstName.length<3)
+		{
+			alert("please enter your name")
+			return false
+		}
+		if(!firstName.match(firstNameCheck))
+		{
+			alert("Name must carry only alphabets")
+			return false
+		}
+		if(!phoneNumber.match(phoneNumberCheck))
+		{
+			alert("enter phone number")
+			return false
+		}
+		if(phoneNumber==""||phoneNumber.length<10)
+		{
+			alert("PHONE NUMBER MUST CARRY 10 DIGITS")
+			return false
+		}
+		if(emailId=="")
+		{
+			alert("Enter email id")
+			return false
+		}
+		if(!emailId.match(emailIdCheck))
+		{
+			alert("check email id")
+			return false
+		}
+		return true
+	}
+	</script>
+</head>
+<body>
+	<form onsubmit="return validate()">
+		<p><input id="firstname" type="tex" placeholder="Enter Name"></p>
+		<p><input id="phonenumber" type="text" placeholder="enter phone number"></p>
+		<p><input id="email" type="text" placeholder="Enter email id"></p>
+		<button>Submit</button>
+	</form>
+
+</body>
+</html>
