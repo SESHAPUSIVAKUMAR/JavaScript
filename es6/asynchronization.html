@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		//asynchronization
+		//setTimeout
+			setTimeout(function(s){
+			console.log("amazon")
+
+			},5000)
+			console.log("flipkart")
+			console.log("meesho")
+			console.log("youtube")
+			//setInterval
+			setInterval(function(s){
+			console.log("amazon")
+			},500)
+			console.log("flipkart")
+			console.log("meesho")
+			console.log("youtube")
+			//promise class
+			let promiseObj=new Promise((resolve,reject)=>{
+				var time=Math.random()
+				console.log(time)
+				if(time<0.5)
+				{
+					return resolve("Data is there from server")
+
+				}
+				else
+					return reject("server crashed")
+			})
+			console.log(promiseObj)
+			console.log("learing about asynchronizatio")
+		
+	</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<script type="text/javascript">
+		//let
+		let a=203109
+		console.log(a)
+		a="siva"
+		console.log(a)
+		//const
+		//const a=20
+		//console.log(a)
+		const c="kumar"
+		console.log(c)
+		//map method
+		var t=[1,2,3,4,5,6,7,8,9,10],update=[]
+		update=t.map(function(s){
+		return s*6
+		})
+		console.log(update)
+		//filter
+		var f=[{id:203116,name:"rajesh",code:"red",salary:20000},
+		{id:203114,name:"karthik",code:"blue",salary:30000},
+		{id:203125,name:"trinath",code:"green",salary:40000}]
+			f.map(function(c){
+				console.log(c.id)
+			})
+		var codered=f.filter(function(s){
+			return s.salary>=10000
+			})
+			console.log(codered)
+
+	</script>
+
+</body>
+</html>
