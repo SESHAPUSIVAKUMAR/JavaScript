@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<section id="emp" style="display: flex;" >
+		
+	</section>
+	<!-- <button onclick="butn()">clickOn</button>  -->
+	<script type="text/javascript">
+		fetch("https://reqres.in/api/users?page=2")
+		.then((res)=>{
+			console.log(res)
+			return res.json()
+		})
+		.then((jsonRes)=>{
+			console.log(jsonRes)
+			display(jsonRes.data)
+		})
+		function display(employees)
+		{
+			var block=document.getElementById("emp")
+			for(i=0;i<employees.length;i++)
+			{
+				block.innerHTML+=`
+				<div>
+				<p>${employees[i].first_name}
+				</p>
+				<img src="${employees[i].avatar}" width="50%"/>
+				</div>`;
+
+			}
+			
+		}
+	</script>
+	 
+	 <!--API--> 
+	 <!-- <section id="emp2">
+	 	
+	 </section>
+	 <script type="text/javascript">
+	 	fetch("https://reqres.in/api/unknown")
+	 	.then((res2)=>{
+	 		console.log(res2)
+	 		return res2.json()
+	 	})
+	 	.then((jsonRes2)=>{
+	 		console.log(jsonRes2)
+	 		display2(jsonRes2.data)
+	 	})
+	 	function display2(employees2){
+	 	var block2=document.getElementById("emp2")
+	 	for(i=0;i<employees2.length;i++)
+	 	{
+	 		block2.innerHTML+=`<div>
+	 		<p>${employees2[i].name}</p>
+	 		<p>${employees2[i].color}</p>
+	 		<style ${employees2.color}>
+	 		</style>
+	 		</div>`
+	 	}
+	 }
+
+	 </script> -->
+</body>
+</html>
