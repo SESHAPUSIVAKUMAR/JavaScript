@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+</head>
+<body>
+	<section id="emp" style="display: flex;">
+		
+	</section>
+	<script type="text/javascript">
+		fetch("https://reqres.in/api/users?delay=3")
+		.then((res)=>{
+			console.log(res)
+			return res.json()
+		})
+		.then((jsonRes)=>{
+			console.log(jsonRes)
+			jsondis(jsonRes.data)
+		})
+		function jsondis(employees)
+		{
+			var block=document.getElementById("emp")
+			for(i=0;i<employees.length;i++)
+			{
+				block.innerHTML+=`
+				<div>
+				<p>${employees[i].first_name}</p>
+				<img src="${employees[i].avatar}"width="50%"/>
+				<p>${employees[i].email}</p>
+				</div>
+				`
+			}
+		}
+	</script>
+
+	<!-- <h2>My First JavaScript</h2>
+	<button type="button"
+	onclick="document.getElementById('class').innerHTML = Date()">
+	Click me to display Date and Time.</button>
+	<p id="class"></p> -->
+</body>
+</html>
