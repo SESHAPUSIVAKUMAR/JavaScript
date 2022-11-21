@@ -19,7 +19,7 @@
 		body
 		{
 			background-image: url(https://media.istockphoto.com/id/1293850746/photo/to-do-list.jpg?b=1&s=170667a&w=0&k=20&c=TnvCl7dU0GaKiMoK6ma9fZV_eBsxNBRmc51r-dBDsRY=);
-			background-size: 50rem;
+			background-size: 90rem;
 			background-repeat: no-repeat;
 			background-attachment: fixed;
 			background-position: center;
@@ -29,13 +29,23 @@
 		.cssEdit
 		{
 			text-align: center;
-			margin: 10% 9% 10% 0%;
-			padding: 9% 5% 9% 0%;
+			margin: 5% 50% 5% 10%;
+			padding: 5% 5% 5% 0% ;
+			border: 1px solid black;
+			background-color: whitesmoke;
+			border-radius: 2rem;
 			
 		}
 		#toDo
 		{
 			color: white;
+		}
+		.newColor
+		{
+			color: orange;
+			font-size: 1rem;
+			font-weight: bold;
+			
 		}
 
 	</style>
@@ -62,15 +72,25 @@
 			let	ul=document.querySelector("ul")
 			console.log(ul)
 			let li=document.createElement("li");
+			const d=new Date()
+			var h=d.getHours();
+			const m=d.getMinutes();
 			li.innerHTML=`
-			<span>${newMsg}</span>
-			<i class="fa-solid fa-square-xmark"></i>
+			<span class="newColor">${newMsg} </span>
+			<button id="delete" name="deleteButton"class="btn btn-red" (click)="removeItem()">
+			<i class="fas fa-trash"></i>
+			</button>
+			<span>Time:-${h}:${m}</span>
 			`
 			li.classList.add("listType")
 			ul.appendChild(li)
-
 		}
-		
+		function delete1(del)
+		{
+			if(del===newColor){
+
+			}
+		}
 	</script>
 	<div class="cssEdit">
 	<input  id="toDo" class="btn btn-success btn-lg " type="text" placeholder="Enter text">
@@ -85,3 +105,17 @@
 
 </body>
 </html>
+<!-- <button name="deleteButton" class="delete"><i class="fas fa-trash"></i></button> -->
+<!-- <div class="alert alert-warning alert-dismissible fade show" role="alert">
+  				<strong><span class="newColor">${newMsg} </span><span>Time:-${h}:${m}</span></strong>
+  				<button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    			<span aria-hidden="true">&times;</span>
+ 				 </button>
+			</div> -->
+
+<!-- <span class="newColor">${newMsg} </span>
+			<button name="deleteButton"class="btn btn-red" (click)="removeItem()">
+			<i class="fas fa-trash"></i>
+			</button>
+			<span>Time:-${h}:${m}</span> -->
+			
